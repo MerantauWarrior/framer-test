@@ -4,6 +4,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@/forms/*": ["src/components/forms/*"],
+      "@/lottie/*": ["src/animations/lottie/*"],
       "@/lib/*": ["src/libraries/*"]
     }
   }

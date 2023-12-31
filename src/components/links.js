@@ -22,6 +22,9 @@ export function Links() {
       <Link className={`link ${pathname === '/form' ? 'active' : ''}`} href="/form">
         <StyledLink>Form</StyledLink>
       </Link>
+      <Link className={`link ${pathname === '/lottie' ? 'active' : ''}`} href="/lottie">
+        <StyledLink>Lottie</StyledLink>
+      </Link>
     </StyledLinkWrapper>
   )
 }
