@@ -14,9 +14,9 @@ const ChainCount = () => {
   useEffect(() => {
     setLoaded(true)
     if (loaded) {
-      ref.current.addEventListener('load', function (e) {
+      setTimeout(() => {
         create({
-          player: e.target,
+          player: ref.current,
           mode: 'chain',
           actions: [
             {
@@ -35,7 +35,7 @@ const ChainCount = () => {
             }
           ]
         });
-      });
+      }, 1000)
     }
   }, [loaded]);
 

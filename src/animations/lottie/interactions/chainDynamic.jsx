@@ -13,43 +13,74 @@ const ChainDynamic = () => {
 
   useEffect(() => {
     setLoaded(true)
-    if (loaded) {
-      ref.current.addEventListener('load', function (e) {
+    if (loaded){
+      setTimeout(()=>{
         create({
-          player: e.target,
-          mode: 'chain',
+          player: ref.current,
+          mode: "chain",
           actions: [
             {
-              state: 'click',
-              transition: 'onComplete'
+              state: "click",
+              transition: "onComplete",
             },
             {
-              state: 'autoplay',
-              transition: 'onComplete',
-              path: 'lottie/confettiNew.json'
+              state: "autoplay",
+              transition: "onComplete",
+              path: "/lottie/confettiNew.json",
             },
             {
-              state: 'autoplay',
-              transition: 'onComplete',
-              path: 'lottie/done.json',
-              reset: true
-            }
-          ]
+              state: "autoplay",
+              transition: "onComplete",
+              path: "/lottie/done.json",
+              reset: true,
+            },
+          ],
         });
-      });
+      },1000)
     }
-  }, [loaded]);
+  },[loaded])
+
+//---------------------------------- NO effect here :(
+
+  // useEffect(() => {
+  //   setLoaded(true)
+  //   if (loaded) {
+  //     ref.current.addEventListener('load', function (e) {
+  //       create({
+  //         player: e.target,
+  //         mode: 'chain',
+  //         actions: [
+  //           {
+  //             state: 'click',
+  //             transition: 'onComplete'
+  //           },
+  //           {
+  //             state: 'autoplay',
+  //             transition: 'onComplete',
+  //             path: '/lottie/confettiNew.json'
+  //           },
+  //           {
+  //             state: 'autoplay',
+  //             transition: 'onComplete',
+  //             path: '/lottie/done.json',
+  //             reset: true
+  //           }
+  //         ]
+  //       });
+  //     });
+  //   }
+  // }, [loaded]);
 
   return (
     <div>
-      <h2>Chaining - Dynamically Load Animations</h2>
+      <h2>Chaining - Dynamically Load Animations !</h2>
       <br/>
       {!loaded ? null : (
         <lottie-player
           ref={ref}
           src="/lottie/aim.json"
           mode="normal"
-          style={{width: '320px'}}
+          style={{width: 320, height: 320}}
         />
       )}
     </div>
