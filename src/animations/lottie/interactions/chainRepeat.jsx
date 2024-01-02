@@ -15,8 +15,11 @@ const ChainRepeat = () => {
     setLoaded(true)
     if (loaded) {
       ref.current.addEventListener('load', function (e) {
+
+      });
+      setTimeout(()=>{
         create({
-          player: e.target,
+          player: ref.current,
           mode: 'chain',
           actions: [
             {
@@ -33,7 +36,7 @@ const ChainRepeat = () => {
             }
           ]
         });
-      });
+      },1000)
     }
   }, [loaded]);
 
